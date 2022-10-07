@@ -78,7 +78,7 @@ For a vector:
 	vector<int> arr{ 1, 2, 3, 4, 5 };
 ```
 
-**Get elements by index**
+**__Get elements by index__**
 ```cpp
 for (int i = 0; i < arr.size(); ++i)
 	{
@@ -86,7 +86,7 @@ for (int i = 0; i < arr.size(); ++i)
 	}
 ```
 
-**Get elements with iterators (pointers)**
+**__Get elements with iterators (pointers)__**
 ```cpp
 for (auto ptr = arr.begin(); ptr < arr.end(); ptr++)
 	{
@@ -94,7 +94,7 @@ for (auto ptr = arr.begin(); ptr < arr.end(); ptr++)
 	}
 ```
 
-**Get elements using range-based for loop**
+**__Get elements using range-based for loop__**
 ```cpp
 for (int i : arr)
 	{
