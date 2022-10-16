@@ -40,7 +40,6 @@
 ### Strings
 Initializing and passing strings are expensive. If have to and for read only, use `string_view` instead.
 
-0. Header File
 ```cpp
 #include <string>
 ```
@@ -62,7 +61,6 @@ cout << sentence.length(); // 13
 ### One-dimensional Data Structure
 
 #### Vectors
-0. Header File
 ```cpp
 #include <vector>
 ```
@@ -84,7 +82,6 @@ Two common container adaptors of linked lists we need to use in this club will b
 
 ##### Stacks
 It is a last in first out (LIFO) structure which you put one element in from the top and it would be removed from the top only. The encapsulated object by default is deque, but can also be vector and list.
-0. Header File
 ```cpp
 #include <stack>
 ```
@@ -118,7 +115,6 @@ cout << numbers.empty(); // false
 
 ##### Queues
 It is a first in first out (FIFO) structure where element is inserted from the back and is deleted from the front (top).
-0. Header File
 ```cpp
 #include <queue>
 ```
