@@ -8,11 +8,16 @@
 <details>
     <summary>Table of Contents</summary>
     <ol>
+        <a href="#data-types">Data Types</a>
+        <ul>
+            <a href="#one-dimensional-data-structures">Strings</a>
+        </ul>
         <a href="#data-structures">Data Structures</a>
         <ul>
             <a href="#one-dimensional-data-structures">One-dimensional Data Structures</a>
             <ul>
                 <li><a href="#vectors">Vectors</a></li>
+                <li><a href="#linked-lists">Linked Lists</a></li>
             </ul>
         </ul>
         <a href="#loops">Loops</a>
@@ -26,6 +31,30 @@
         <a href="#terminology">Terminology</a>
     </ol>
 </details>
+
+
+
+<!-- DATA TYPES -->
+## Data Types
+
+### Strings
+Initializing and passing strings are expensive. If have to and for read only, use `string_view` instead.
+
+0. Header File
+```cpp
+#include <string>
+```
+1. Initializing
+```cpp
+string sentence { "Hello, world!" };
+sentence = "Hello, xxx!";
+```
+2. Length
+```cpp
+cout << sentence.length(); // 13
+```
+
+
 
 <!-- DATA STRUCTURES -->
 ## Data Structures
@@ -48,6 +77,79 @@ vector<double> arr2 = { 0.1, 0.2, 0.3 };
 arr.push_back(5) // { 5 }
 arr.push_back(6) // { 5, 6 }
 ```
+
+#### Linked Lists
+Imagine linked lists as a train: if you know where one car is, you will know where the next car is (unless it is the end of the train).
+Two common container adaptors of linked lists we need to use in this club will be stack, and queue.
+
+##### Stacks
+It is a last in first out (LIFO) structure which you put one element in from the top and it would be removed from the top only. The encapsulated object by default is deque, but can also be vector and list.
+0. Header File
+```cpp
+#include <stack>
+```
+1. Initializing
+```cpp
+stack<int> numbers;
+```
+2. Insertion
+```cpp
+numbers.push(2); // 2
+numbers.push(9); // 9 -> 2
+numbers.push(8); // 8 -> 9 -> 2
+```
+3. Deletion
+```cpp
+numbers.pop(); // 9 -> 2
+```
+4. Get Element
+```cpp
+int ele;
+ele = numbers.top(); // ele == 9
+```
+5. Size
+```cpp
+int size{ numbers.size() }; // 2
+```
+6. If Empty
+```cpp
+cout << numbers.empty(); // false
+```
+
+##### Queues
+It is a first in first out (FIFO) structure where element is inserted from the back and is deleted from the front (top).
+0. Header File
+```cpp
+#include <queue>
+```
+1. Initializing
+```cpp
+queue<int> numbers;
+```
+2. Insertion
+```cpp
+numbers.push(2); // 2
+numbers.push(9); // 2 -> 9
+numbers.push(8); // 2 -> 9 -> 8
+```
+3. Deletion
+```cpp
+numbers.pop(); // 9 -> 8
+```
+4. Get Element
+```cpp
+cout << numbers.front(); // 9
+cout << numbers.back(); // 8
+```
+5. Size
+```cpp
+int size{ numbers.size() }; // 2
+```
+6. If Empty
+```cpp
+cout << numbers.empty(); // false
+```
+
 
 
 <!-- LOOPS -->
@@ -78,7 +180,7 @@ For a vector:
 	vector<int> arr{ 1, 2, 3, 4, 5 };
 ```
 
-**__Get elements by index__**
+**Get elements by index**
 ```cpp
 for (int i = 0; i < arr.size(); ++i)
 	{
@@ -86,7 +188,7 @@ for (int i = 0; i < arr.size(); ++i)
 	}
 ```
 
-**__Get elements with iterators (pointers)__**
+**Get elements with iterators (pointers)**
 ```cpp
 for (auto ptr = arr.begin(); ptr < arr.end(); ptr++)
 	{
@@ -94,7 +196,7 @@ for (auto ptr = arr.begin(); ptr < arr.end(); ptr++)
 	}
 ```
 
-**__Get elements using range-based for loop__**
+**Get elements using range-based for loop**
 ```cpp
 for (int i : arr)
 	{
